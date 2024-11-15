@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import confetti from "canvas-confetti";
+ // Import confetti library
 import SearchEngine from "./SearchEngine";
 import Forecast from "./Forecast";
 
 import "../styles.css";
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function App() {
   const [query, setQuery] = useState("");
@@ -13,6 +15,16 @@ function App() {
     data: {},
     error: false
   });
+
+  // Trigger confetti and show welcome message on page load
+  useEffect(() => {
+    // Show confetti effect
+    confetti({
+      particleCount: 1500,
+      spread: 360,
+      origin: { y: 1.0 , x: 0.5}
+    });
+  }, []);
 
   const toDate = () => {
     const months = [
@@ -40,11 +52,11 @@ function App() {
     ];
 
     const currentDate = new Date();
-    const date = `${days[currentDate.getDay()]} ${currentDate.getDate()} ${months[currentDate.getMonth()]
-      }`;
+    const date = `${days[currentDate.getDay()]} ${currentDate.getDate()} ${months[currentDate.getMonth()]}`;
     return date;
   };
-  //new search function
+
+  // Search function
   const search = async (event) => {
     event.preventDefault();
     if (event.type === "click" || (event.type === "keypress" && event.key === "Enter")) {
@@ -84,6 +96,10 @@ function App() {
 
   return (
     <div className="App">
+      {/* Welcome message */}
+      <div style={{ textAlign: "center", fontSize: "24px", marginTop: "20px" }}>
+        🎉 Welcome to My Weather App! 🎉
+      </div>
 
       {/* SearchEngine component */}
       <SearchEngine query={query} setQuery={setQuery} search={search} />
