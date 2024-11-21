@@ -1,6 +1,6 @@
 # ClearCast - React Weather App 🌦️
 
-**ClearCast** is a web app developed as a final project for the SheCodes React workshop. Built using React.js, it enables users to search for the weather conditions of any city in the world and provides real-time weather information. The app fetches data using the SheCodes Weather API.
+**ClearCast** is a web app developed as a project for the React workshop. Built using React.js, it enables users to search for the weather conditions of any city in the world and provides real-time weather information. The app fetches data using the Weather API.
 
 ![App Screenshot](images/localhost_3000_.png)
 
@@ -9,7 +9,7 @@
 ## 🌟 Features
 - **Global Search:** Find weather conditions for any city worldwide.
 - **Real-Time Updates:** Displays current weather details, including temperature and descriptions.
-- **API Integration:** Utilizes the SheCodes Weather API for accurate data.
+- **API Integration:** Utilizes the Weather API for accurate data.
 
 ---
 
